@@ -47,7 +47,6 @@ def main():
 
     else:
         print("Filtering by that option is not yet supported.")
-        filtered_users = []  # Set to empty list
 
     print("\nFiltered users:")
     if filtered_users:
