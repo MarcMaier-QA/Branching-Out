@@ -22,11 +22,13 @@ def filter_users_by_email(users: list, email):
     return [user for user in users if user.get("email").lower() == email.lower()]
 
 
-if __name__ == "__main__":
+def main():
+    """Main function to run the user filtering address"""
     users_data = load_data("users.json")
 
     filter_option = input("What would you like to filter by? ('name', 'age', or 'email'): ").strip().lower()
 
+    filtered_users = []
     if filter_option == "name":
         name_to_search = input("Enter a name to filter users: ").strip()
         filtered_users = filter_users_by_name(users_data, name_to_search)
@@ -53,3 +55,7 @@ if __name__ == "__main__":
             print(user)
     else:
         print("No users found matching your criteria.")
+
+
+if __name__ == "__main__":
+    main()
